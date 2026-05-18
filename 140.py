@@ -221,3 +221,118 @@ obj = DivisibleBySeven(n)
 # Print numbers divisible by 7
 for num in obj.generate():
     print(num)
+
+
+# 82. Write a program to compute the frequency of the words from the input. The output
+# should output after sorting the key alphanumerically. Suppose the following input is
+# supplied to the program:
+
+
+# Take input
+sentence = input("Enter sentence: ")
+
+# Split sentence into words
+words = sentence.split()
+
+# Create dictionary
+freq = {}
+
+# Count word frequencies
+for word in words:
+    if word in freq:
+        freq[word] += 1
+    else:
+        freq[word] = 1
+
+# Sort by key
+sorted_freq = dict(sorted(freq.items()))
+
+# Print result
+for key, value in sorted_freq.items():
+    print(key, ":", value)
+
+
+# 83. Define a class Person and its two child classes: Male and Female. All classes have a
+# method "getGender" which can print "Male" for Male class and "Female" for Female class.
+
+class Person:
+    def getGender(self):
+        pass
+
+class Male(Person):
+    def getGender(self):
+        print("Male")
+
+class Female(Person):
+    def getGender(self):
+        print("Female")
+
+
+m = Male()
+f = Female()
+
+m.getGender()
+f.getGender()   
+
+
+# 84. Please write a program to compress and decompress the string "hello world!hello
+# world!hello world!hello world!".
+
+import zlib
+
+# Original string
+text = "hello world!hello world!hello world!hello world!"
+
+# Compress
+compressed = zlib.compress(text.encode())
+
+# Decompress
+decompressed = zlib.decompress(compressed).decode()
+
+print("Compressed:", compressed)
+print("Decompressed:", decompressed)
+
+# 86. Please write a binary search function which searches an item in a sorted list. The
+# function should return the index of element to be searched in the list.
+
+
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        # Check middle element
+        if arr[mid] == target:
+            return mid
+
+        # If target is greater, ignore left half
+        elif arr[mid] < target:
+            low = mid + 1
+
+        # If target is smaller, ignore right half
+        else:
+            high = mid - 1
+
+    return -1  # Not found
+
+
+# Example sorted list
+arr = [1, 3, 5, 7, 9, 11, 13]
+
+# Input target
+target = int(input("Enter number to search: "))
+
+# Call function
+result = binary_search(arr, target)
+
+# Output
+if result != -1:
+    print("Element found at index:", result)
+else:
+    print("Element not found")
+
+
+
+
