@@ -61,3 +61,70 @@ print(sorted_dict)
 # 74. Write a program that calculates and prints the value according to the given formula:
 
 
+import math
+
+C = 50
+H = 30
+
+# Input values
+values = input("Enter numbers separated by comma: ")
+
+# Split values
+D = values.split(',')
+
+result = []
+
+# Apply formula
+for i in D:
+    Q = math.sqrt((2 * C * int(i)) / H)
+    result.append(str(round(Q)))
+
+# Print result
+print(",".join(result))
+
+
+
+# 75. Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional
+# array. The element value in the i-th row and j-th column of the array should be i*j.
+
+
+# Input rows and columns
+X = int(input("Enter number of rows: "))
+Y = int(input("Enter number of columns: "))
+
+# Create 2D array
+array = []
+
+for i in range(X):
+    row = []
+    
+    for j in range(Y):
+        row.append(i * j)
+    
+    array.append(row)
+
+# Print array
+print(array)
+
+
+# 76. Write a program that accepts a comma separated sequence of words as input and
+# prints the words in a comma-separated sequence after sorting them alphabetically.
+
+
+# Take input
+words = input("Enter words separated by comma: ")
+
+# Convert string into list
+word_list = words.split(',')
+
+# Sort words alphabetically
+word_list.sort()
+
+# Convert list into comma-separated string
+result = ",".join(word_list)
+
+# Print result
+print(result)
+
+
+# 74. 
