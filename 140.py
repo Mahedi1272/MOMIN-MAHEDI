@@ -146,3 +146,78 @@ sorted_words = sorted(unique_words)
 
 # Print result
 print(" ".join(sorted_words))
+
+
+# 79. Write a program that accepts a sentence and calculate the number of letters and
+# digits. Suppose the following input is supplied to the program:
+
+# Take input
+sentence = input("Enter a sentence: ")
+
+letters = 0
+digits = 0
+
+# Check each character
+for ch in sentence:
+    
+    if ch.isalpha():
+        letters += 1
+        
+    elif ch.isdigit():
+        digits += 1
+
+# Print result
+print("Letters:", letters)
+print("Digits:", digits)
+
+
+# 80. A website requires the users to input username and password to register. Write a
+# program to check the validity of password input by users. Following are the criteria
+# for checking the password:
+
+
+import re
+
+password = input("Enter password: ")
+
+# Rules
+length_ok = len(password) >= 6 and len(password) <= 12
+lower_ok = re.search("[a-z]", password)
+upper_ok = re.search("[A-Z]", password)
+digit_ok = re.search("[0-9]", password)
+special_ok = re.search("[$#@]", password)
+
+# Check validity
+if length_ok and lower_ok and upper_ok and digit_ok and special_ok:
+    print("Valid Password")
+else:
+    print("Invalid Password")
+
+
+
+# 81. Define a class with a generator which can iterate the numbers, which are divisible by
+# 7, between a given range 0 and n.
+
+
+# Class with generator function
+class DivisibleBySeven:
+    
+    def __init__(self, n):
+        self.n = n
+
+    # Generator method
+    def generate(self):
+        for i in range(self.n + 1):
+            if i % 7 == 0:
+                yield i
+
+
+# Take input
+n = int(input("Enter value of n: "))
+
+# Create object
+obj = DivisibleBySeven(n)
+
+# Print numbers divisible by 7
+for num in obj.generate():
+    print(num)
