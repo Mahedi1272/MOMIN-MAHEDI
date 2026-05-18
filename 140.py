@@ -127,4 +127,22 @@ result = ",".join(word_list)
 print(result)
 
 
-# 74. 
+# 77. Write a program that accepts a sequence of whitespace separated words as input
+# and prints the words after removing all duplicate words and sorting them
+# alphanumerically.
+
+
+# Take input
+words = input("Enter words: ")
+
+# Split words into list
+word_list = words.split()
+
+# Remove duplicates using set()
+unique_words = set(word_list)
+
+# Sort words alphanumerically
+sorted_words = sorted(unique_words)
+
+# Print result
+print(" ".join(sorted_words))
