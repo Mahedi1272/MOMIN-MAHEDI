@@ -623,3 +623,27 @@ num = int(input("Enter a number: "))
 
 # Output
 print("Factorial:", factorial(num))
+
+# 101. Hamming distance is the number of characters that differ between two strings.
+
+
+def hamming_distance(s1, s2):
+    # strings must be same length
+    if len(s1) != len(s2):
+        return "Strings must be of equal length"
+
+    count = 0
+
+    for i in range(len(s1)):
+        if s1[i] != s2[i]:
+            count += 1
+
+    return count
+
+
+# Example
+print(hamming_distance("karolin", "kathrin"))
+
+
+
+
